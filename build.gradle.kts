@@ -9,8 +9,8 @@ val serverVersion: String by rootProject.extra
 plugins {
     `java-library`
     `maven-publish`
-    id("io.papermc.paperweight.userdev") version "1.7.7"
-    id("com.github.johnrengelman.shadow") version "8.1.1" // Shadow Plugin
+    id("io.papermc.paperweight.userdev")
+    id("com.github.johnrengelman.shadow") // Shadow Plugin
 }
 
 repositories {
