@@ -1,5 +1,5 @@
 group = "dev.pledix.realshops"
-version = "1.4.2"
+version = "1.4.2-SNAPSHOT"
 
 val serverVersion = "1.20.4-R0.1-SNAPSHOT"
 
@@ -59,7 +59,7 @@ publishing {
 
             groupId = "dev.pledix.realshops"
             artifactId = "api"
-            version = "1.4.2"
+            version = "1.4.2-SNAPSHOT"
 
             pom {
                 name.set("RealShops API")
