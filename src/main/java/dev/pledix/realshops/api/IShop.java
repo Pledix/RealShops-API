@@ -6,7 +6,9 @@ import org.bukkit.OfflinePlayer;
 public interface IShop {
 
     String getTitle();
+
     Location getLocation();
+
     OfflinePlayer getOwner();
 
 }

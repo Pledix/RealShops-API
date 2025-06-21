@@ -1,12 +1,12 @@
-package dev.pledix.realshops.api;
+package dev.pledix.realshops.api.pricing;
+
+import dev.pledix.realshops.api.IPaymentMethod;
 
 public interface IPricing {
 
     IPaymentMethod getPaymentMethod();
 
     Object getPrice();
-
-    IPricing clone();
 
     String toString();
 

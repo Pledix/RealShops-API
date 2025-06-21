@@ -1,10 +1,7 @@
-//group = rootProject.group
-//version = rootProject.version
-
 group = "dev.pledix.realshops"
-version = "1.3"
+version = "1.4.2"
 
-val serverVersion: String by rootProject.extra
+val serverVersion = "1.20.4-R0.1-SNAPSHOT"
 
 plugins {
     `java-library`
@@ -46,7 +43,7 @@ configurations.mojangMappedServer {
 }
 
 tasks.jar {
-    archiveBaseName.set(rootProject.name + "API")
+    archiveBaseName.set("RealShops-API")
     archiveVersion.set("")
 }
 
@@ -62,18 +59,44 @@ publishing {
 
             groupId = "dev.pledix.realshops"
             artifactId = "api"
-            version = "1.3"
+            version = "1.4.2"
+
+            pom {
+                name.set("RealShops API")
+                description.set("API module for RealShops plugin")
+                url.set("https://github.com/Pledix/RealShops-API")
+
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licenses/MIT")
+                    }
+                }
+
+                developers {
+                    developer {
+                        id.set("Pledix")
+                        name.set("Enes")
+                        email.set("eneskilinc_@hotmail.com")
+                    }
+                }
+
+                scm {
+                    connection.set("scm:git:https://github.com/Pledix/RealShops-API.git")
+                    developerConnection.set("scm:git:ssh://git@github.com/Pledix/RealShops-API.git")
+                    url.set("https://github.com/Pledix/RealShops-API")
+                }
+            }
         }
     }
 
     repositories {
         maven {
-            name = "CentralPortal"
-            url = uri("https://central.sonatype.com/api/v1/publish/")
-
+            name = "central"
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
-                username = project.findProperty("cppUsername") as String?
-                password = project.findProperty("cppPassword") as String?
+                username = "token"  // Sabit olarak "token" yazılır
+                password = findProperty("ossrhApiToken") as String
             }
         }
     }
