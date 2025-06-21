@@ -95,8 +95,8 @@ publishing {
             name = "central"
             url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
-                username = "token"  // Sabit olarak "token" yazılır
-                password = findProperty("ossrhApiToken") as String
+                username = findProperty("ossrhUsername") as String?
+                password = findProperty("ossrhPassword") as String?
             }
         }
     }
