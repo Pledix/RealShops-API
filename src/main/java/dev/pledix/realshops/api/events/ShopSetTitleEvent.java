@@ -7,8 +7,21 @@ public class ShopSetTitleEvent extends ShopEvent implements Cancellable {
 
     private boolean cancelled;
 
-    public ShopSetTitleEvent(IShop shop) {
-        super(shop, true);
+    private final IShop shop;
+
+    private String title;
+
+    public ShopSetTitleEvent(IShop shop, String title) {
+        this.shop = shop;
+        this.title = title;
+    }
+
+    public IShop getShop() {
+        return shop;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     @Override

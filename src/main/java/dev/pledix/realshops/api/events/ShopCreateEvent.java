@@ -7,8 +7,14 @@ public class ShopCreateEvent extends ShopEvent implements Cancellable {
 
     private boolean cancelled;
 
+    private final IShop shop;
+
     public ShopCreateEvent(IShop shop) {
-        super(shop);
+        this.shop = shop;
+    }
+
+    public IShop getShop() {
+        return shop;
     }
 
     @Override

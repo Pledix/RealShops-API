@@ -8,15 +8,21 @@ public class ShopAdminCancelEvent extends ShopEvent implements Cancellable {
 
     private boolean cancelled;
 
+    private final IShop shop;
+
     private final Player admin;
 
     public ShopAdminCancelEvent(IShop shop, Player admin) {
-        super(shop);
+        this.shop = shop;
         this.admin = admin;
     }
 
     public Player getAdmin() {
         return admin;
+    }
+
+    public IShop getShop() {
+        return shop;
     }
 
     @Override
